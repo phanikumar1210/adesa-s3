@@ -18,9 +18,6 @@ $(document).ready(function(){
     $("#lambda").click(function(){
         var username = $("#username").val();
         var password = $("#password").val();
-		alert(password);
-		alert(username);
-		
 		$.ajax({
             url: "https://ygidmx3wib.execute-api.us-east-1.amazonaws.com/dev/Testing",
             type: "POST",
@@ -34,7 +31,7 @@ $(document).ready(function(){
                  $("span").html(response);
             },
             error: function (xhr, status) {
-                alert(xhr);
+                $("span").html(xhr);
             }
         });
     });
@@ -56,10 +53,17 @@ $(document).ready(function(){
   </div>
   <button type="submit" class="btn btn-primary" id="lambda">Submit</button>
 </form>
-<div>
-<p><span></span></p>
 </div>
 </div>
-</div><div class="col-md-4"></div>
+<div class="col-md-4"></div>
+</div>
+<div class="row">
+	<div class="col-md-4"></div>
+	<div class="col-md-4">
+		<div>
+			<p><span></span></p>
+		</div>
+	</div>
+</div>
 </body>
 </html>
